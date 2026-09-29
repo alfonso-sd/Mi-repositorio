@@ -1,0 +1,40 @@
+import java.util.Scanner;
+
+public class Edad 
+{
+    public static void main(String[] args)
+{   
+    Scanner scanner = new Scanner(System.in);
+
+    do {
+    int añonacimiento = 0;
+    int añoactual = 0;
+
+
+    do 
+    {
+    System.out.println( "Introduce tu año de nacimiento:");
+    if(boolean resultado1 = scanner.hasNextint() == TRUE)
+    {
+        int añonacimiento = scanner.nextint();
+    }
+} while (añonacimiento == 0)
+    do 
+    {
+    System.out.println( "Introduce el año actual:");
+    if(boolean resultado2 = scanner.hasNextint() == TRUE)
+    {
+        int añoactual = scanner.nextint();
+    }
+} while (añoactual == 0)
+
+int edad = añoactual - añonacimiento;
+
+    } while (edad > 0)
+
+System.out.println("Tu edad es" + edad)
+
+}
+
+
+}
