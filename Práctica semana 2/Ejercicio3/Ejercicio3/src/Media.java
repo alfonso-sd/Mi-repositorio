@@ -22,7 +22,7 @@ boolean entero = sc.hasNextInt();
 } while (N<=0);
 
 for(int i=1; i<=N; i++) {
-f = readFloat ("Introduzca el siguiente número real: ");
+f = Esdia.readFloat ("Introduzca el siguiente número real: ");
 suma = suma + f;
 }
 media = suma/N;
