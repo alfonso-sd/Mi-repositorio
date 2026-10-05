@@ -56,31 +56,67 @@ Float n3 = Persona3.getAltura();
 
 if (n1>n2) {
         if (n1>n3) {
-            System.out.println("El mayor número de los que has introducido es el primero, " + n1);
+            System.out.println("La persona más alta es " + Persona1.getNombre());
         }
         else{
-            if (n3>n1) System.out.println("El mayor número de los que has introducido es el último, "+ n3);
-        else System.out.println("El mayor número de los que has introducido son el primero y el último, " + n1);
+            if (n3>n1) System.out.println("La persona más alta de las que has introducido es "+ Persona3.getNombre());
+        else System.out.println("Las personas más altas son " + Persona1.getNombre() + " y " + Persona3.getNombre());
     }
     }
 
     if (n2>n1) {
         if (n2>n3) {
-            System.out.println("El mayor número de los que has introducido es el segundo, " + n2);
+            System.out.println("La persona más alta de las que has introducido es " + Persona2.getNombre());
         }
         else{
-            if (n3>n2) System.out.println("El mayor número de los que has introducido es el último, "+ n3);
-        else System.out.println("El mayor número de los que has introducido son el segundo y el último, " + n2);
+            if (n3>n2) System.out.println("La persona más alta de las que has introducido es "+ Persona3.getNombre());
+        else System.out.println("Las personas más altas son " + Persona2.getNombre() + " y " + Persona3.getNombre());
     }
     }
 
 if (n1==n2) {
         if (n1>n3) {
-            System.out.println("El mayor número de los que has introducido son el primero y el segundo, " + n1);
+            System.out.println("Las personas más altas son " + Persona1.getNombre() + " y " + Persona2.getNombre());
         }
         else{
-            if (n3>n1) System.out.println("El mayor número de los que has introducido es el último, "+ n3);
-        else System.out.println("Los tres números que has introducido son el mismo, " + n1);
+            if (n3>n1) System.out.println("La persona más alta es "+ Persona3.getNombre());
+        else System.out.println("Las tres personas miden lo mismo, " + n1);
+    }
+    }
+
+
+
+Float p1 = Persona1.getAltura();
+Float p2 = Persona2.getAltura();
+Float p3 = Persona3.getAltura();
+
+if (p1>p2) {
+        if (p1>p3) {
+            System.out.println("La persona que más pesa es " + Persona1.getNombre());
+        }
+        else{
+            if (p3>p1) System.out.println("La persona que más pesa de las que has introducido es "+ Persona3.getNombre());
+        else System.out.println("Las personas que más pesan son " + Persona1.getNombre() + " y " + Persona3.getNombre());
+    }
+    }
+
+    if (p2>p1) {
+        if (p2>p3) {
+            System.out.println("La persona que más pesa de las que has introducido es " + Persona2.getNombre());
+        }
+        else{
+            if (p3>p2) System.out.println("La persona que más pesa de las que has introducido es "+ Persona3.getNombre());
+        else System.out.println("Las personas que más pesan son " + Persona2.getNombre() + " y " + Persona3.getNombre());
+    }
+    }
+
+if (p1==p2) {
+        if (p1>p3) {
+            System.out.println("Las personas que más pesan son " + Persona1.getNombre() + " y " + Persona2.getNombre());
+        }
+        else{
+            if (p3>p1) System.out.println("La persona que más pesa es "+ Persona3.getNombre());
+        else System.out.println("Las tres personas pesan lo mismo, " + p1);
     }
     }
 }
