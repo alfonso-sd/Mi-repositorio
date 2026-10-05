@@ -56,9 +56,9 @@ peso = Esdia.readFloat("Introduce el peso de la tercera persona: ");
 altura = Esdia.readFloat("Introduzca la altura de la tercera persona: ");
 Persona Persona3 = new Persona(nombre, peso, altura);
 
-Float n1 = Persona1.getAltura();
-Float n2 = Persona2.getAltura();
-Float n3 = Persona3.getAltura();
+Float n1 = Persona1.getPeso();
+Float n2 = Persona2.getPeso();
+Float n3 = Persona3.getPeso();
 
 if (n1>n2) {
         if (n1>n3) {
