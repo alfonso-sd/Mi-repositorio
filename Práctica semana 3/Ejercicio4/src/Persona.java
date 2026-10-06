@@ -1,9 +1,9 @@
 import es.usal.progiii.tools.Esdia;
 
 public class Persona {
-    private String nombre;
-    private float pesoEnKg;
-    private float alturaEnCm;
+    private String nombre = "Alfonso";
+    private float pesoEnKg = 60;
+    private float alturaEnCm = 171;
 
     public Persona (String nombre, float pesoEnKg, float alturaEnCm) {
 this.nombre = nombre;
@@ -36,8 +36,14 @@ public static void main(String[] args) {
     Float altura = 0f;
 
 nombre = Esdia.readString("Introduce el nombre de la primera persona: ");
-peso = Esdia.readFloat("Introduce el peso de la primera persona: ");
-altura = Esdia.readFloat("Introduzca la altura de la primera persona: ");
+try { peso = Esdia.readFloat("Introduce el peso de la primera persona: ");
+} catch (Exception e){
+    System.err.println("Se ha producido un error.");
+}
+try { altura = Esdia.readFloat("Introduzca la altura de la primera persona: ");
+} catch (Exception e){
+    System.err.println("Se ha producido un error.");
+}
 Persona Persona1 = new Persona(nombre, peso, altura);
 
 nombre = Esdia.readString("Introduce el nombre de la segunda persona: ");

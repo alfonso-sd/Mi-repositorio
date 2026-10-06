@@ -2,6 +2,8 @@
     "java.project.sourcePaths": ["src"],
     "java.project.outputPath": "bin",
     "java.project.referencedLibraries": [
-        "lib/**/*.jar"
+        "lib/**/*.jar",
+        "c:\\Users\\Alfonso\\Downloads\\biblioteca_progiii.jar",
+        "c:\\Users\\Alfonso\\Desktop\\Alfonso\\2026-27\\Programación III\\Mi-repositorio\\biblioteca_progiii.jar"
     ]
 }
