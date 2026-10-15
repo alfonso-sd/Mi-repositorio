@@ -20,4 +20,4 @@ public class App {
     }
 }
 // Los modificadores de visibilidad sirven para controlar quién puede acceder a determinados atributos o métodos, para que no cualquiera pueda ver o cambiar el valor de un atributo o utilizar un método, o todo lo contrario, para asegurarse de que todo el mundo pueda trabajar con los datos definidos en otro sitio
-//
+// Un posible ejemplo es un programa en una empresa que maneje datos personales de sus clientes. Habrá que tener mucho cuidado con qué datos de los clientes están visibles, cuáles se pueden cambiar en una parte del programa pero no en otra, etc.
