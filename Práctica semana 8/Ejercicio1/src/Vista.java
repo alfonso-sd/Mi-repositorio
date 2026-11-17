@@ -24,26 +24,29 @@ public class Vista {
 
             case "1":
                 for(int i =1;i<=15;i++){
-                    for(int j = 1 ; j<=2 ; j++){
-                        String equipo1 = Esdia.readString("Introduce el nombre del equipo local del " + i + "º partido ");
-                        String equipo2 = Esdia.readString("Introduce el nombre del equipo visitante del " + i + "º partido ");
-                        controlador.agregarPartido(equipo1, equipo2);
-                    }
+                    String equipo1 = Esdia.readString("Introduce el nombre del equipo local del " + i + "º partido: ");
+                    String equipo2 = Esdia.readString("Introduce el nombre del equipo visitante del " + i + "º partido: ");
+                    controlador.agregarPartido(equipo1, equipo2);
                 }
-                this.imprimirMensaje("Partidos introducidos correctamente");
+                this.imprimirMensaje("Partidos introducidos correctamente. ");
                 break;
 
             case "2":
                 for(int i = 1 ; i<=15 ; i++){
-                    String resultado = Esdia.readString("Cuál ha sido el resultado del "+ i +"º partido (1 victoria local, 2 victoria visitante, X empate) ");
-                    for(Partido partido: controlador.getModelo().getPartidos()){
-                        partido.setResultado(resultado);
+                        String resultado = Esdia.readString("Cuál ha sido el resultado del "+ i +"º partido (1 victoria local, 2 victoria visitante, X empate): ");
+                        controlador.getModelo().getPartidos().get(i-1).setResultado(resultado);
                     }
-                }
-                this.imprimirMensaje("Suma calculada correctamente");
+                this.imprimirMensaje("Resultados introducidos correctamente. ");
                 break;
 
             case "3":
+                System.out.println(String.format("|-------------------------------------------|"));
+                System.out.println(String.format("|              QUINIELA                     |"));
+                System.out.println(String.format("|-------------------------------------------|"));
+                for(Partido partido: controlador.getModelo().getPartidos()){
+                    System.out.println(String.format("| %-15s | %-15s | %-5s |", partido.getEquipos().get(0).getNombre(), partido.getEquipos().get(1).getNombre(), partido.getResultado()));
+                }
+                System.out.println(String.format("|-------------------------------------------|"));
                 break;
 
             case "q":

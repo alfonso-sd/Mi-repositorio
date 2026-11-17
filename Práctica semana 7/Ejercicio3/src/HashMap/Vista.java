@@ -1,15 +1,14 @@
 package HashMap;
 
 import static es.usal.progiii.tools.Esdia.*;
-import java.util.HashMap;
-import java.util.Map;
 
 
-public class EjercicioCRUDHashMap {
+public class Vista {
 
-    private static HashMap<String, Persona> personas = new HashMap<>();
+    Controlador controlador;
 
-    public static void main(String[] args) {
+    public void mostrarMenu(){
+
         int opcion;
         do {
             System.out.println("\n--- MENU CRUD ---");
@@ -42,54 +41,56 @@ public class EjercicioCRUDHashMap {
         } while (opcion != 5);
     }
 
-    public static void agregarPersona() {
+    public void agregarPersona() {
         String dni = readString_ne("Ingrese el dni de la persona: ");
         String nombre = readString_ne("Ingrese el nombre de la persona: ");
         int edad = readInt("Ingrese la edad de la persona: ");
         double altura = readDouble("Ingrese la altura de la persona (ej. 1.75): ");
-        personas.put(dni, new Persona(nombre, edad, altura));
+        controlador.getModelo().agregarPersona(dni, nombre, edad, altura);
     }
 
-    public static void eliminarPersona() {
+    public void eliminarPersona() {
         String dni = readString_ne("Ingrese el dni de la persona a eliminar: ");
-        if (personas.containsKey(dni)) {
-            personas.remove(dni);
-            System.out.println("Persona eliminada.");
+        Boolean personaEliminada = controlador.getModelo().eliminarPersona(dni);
+        if (personaEliminada) {
+            System.out.println("Persona eliminada correctamente.");
         } else {
             System.out.println("Persona no encontrada.");
         }
     }
 
-    public static void modificarPersona() {
+    public void modificarPersona() {
         String dni = readString_ne("Ingrese el dni de la persona a modificar: ");
 
-        if (personas.containsKey(dni)) {
+        if (controlador.getModelo().getPersonas().containsKey(dni)) {
 
             String nuevoNombre = readString_ne("Ingrese el nuevo nombre: ");
             int nuevaEdad = readInt("Ingrese la nueva edad: ");
             double nuevaAltura = readDouble("Ingrese la nueva altura (ej. 1.75): ");
 
-            Persona personaModificada = new Persona(nuevoNombre, nuevaEdad, nuevaAltura);
-            personas.put(dni, personaModificada);
-
+            controlador.getModelo().agregarPersona(dni, nuevoNombre, nuevaEdad, nuevaAltura);
+            System.out.println("Persona modificada correctamente. ");
         } else {
             System.out.println("Persona no encontrada.");
         }
     }
 
-    public static void listarPersonas() {
+    public void listarPersonas() {
 
-        // Si está vacío, no se puede recorrer
-        if (personas.isEmpty()) {
+        if (controlador.getModelo().getPersonas().isEmpty()) {
             System.out.println("No hay personas en la lista.");
             return;
         }
 
-        for (Map.Entry<String, Persona> entry : personas.entrySet()) {
-            String dni = entry.getKey();
-            Persona value = entry.getValue();
-            System.out.println(String.format("DNI:%9s - %s",dni,value.getEstadoComoString()));
-        }
+        controlador.getModelo().listarPersonas();
+    }
+
+    public void imprimirMensaje (String s){
+        System.out.println(s);
+    }
+
+    public void setControlador(Controlador controlador) {
+        this.controlador = controlador;
     }
 
 }

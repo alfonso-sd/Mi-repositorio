@@ -34,7 +34,7 @@ public class Modelo {
         }
     }
 
-    public Persona modificarPersona (String nombre){
+    public Persona contienePersona (String nombre){
         Persona personaAModificar = null;
         for (Persona persona : personas) {
             if (persona.getNombre().equals(nombre)) {

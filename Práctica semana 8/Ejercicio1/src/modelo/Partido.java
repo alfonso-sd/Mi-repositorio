@@ -1,7 +1,5 @@
 package modelo;
 import java.util.ArrayList;
-import java.util.Iterator;
-
 
 public class Partido {
     private ArrayList<Equipo> equipos = new ArrayList<>();
