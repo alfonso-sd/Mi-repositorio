@@ -1,0 +1,28 @@
+import modelo.*;
+
+public class Controlador {
+    private Modelo modelo;
+    private Vista vista;
+
+    public Controlador (Modelo modelo, Vista vista){
+        this.modelo = modelo;
+        this.vista = vista;
+    }
+
+    public Modelo getModelo() {
+        return modelo;
+    }
+
+    public Vista getVista() {
+        return vista;
+    }
+
+    public void agregarPartido(String equipo1, String equipo2){
+        modelo.agregarPartido(equipo1, equipo2);
+    }
+
+    public void leerPartidos(){
+        modelo.leerPartidos();
+    }
+    
+    }
