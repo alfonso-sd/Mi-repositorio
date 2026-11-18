@@ -1,5 +1,8 @@
 import es.usal.progiii.tools.Esdia;
 
+//He colocado breakpoints (esos botoncitos rojos a la izquierda de las líneas de código)
+//en las líneas 11, 17, 42, 46, 57, 64 y 98, para ver cómo va el flujo del código
+
 public class Persona {
     private String nombre = "Alfonso";
     private float pesoEnKg = 60;
